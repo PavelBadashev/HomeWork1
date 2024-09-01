@@ -29,7 +29,7 @@ public class App {
                     System.out.println(Arrays.toString(AnimalEnum.values())); // Вывод списка доступны видов животных
                     System.out.println("Какое животное вы хотите добавить? (Выберите из приведенного выше списка)");
                     String inputLineAnimal = scanner.nextLine(); // Ввод значения пользователем
-                    AnimalEnum animalTypCommand = AnimalEnum.fromString(inputLineAnimal); // Валидация введенного текста
+                    AnimalEnum animalTypeCommand = AnimalEnum.fromString(inputLineAnimal); // Валидация введенного текста
 
                     // Ввод основных атрибутов животного
                     System.out.printf("Введите кличку животного: ");
@@ -44,19 +44,22 @@ public class App {
                     System.out.printf("Введите цвет животного: ");
                     String inputAnimalColor = scanner.nextLine();
 
-                    switch (animalTypCommand) {
+                    switch (animalTypeCommand) {
                         case CAT:
                             Cat cat = new Cat(inputAnimalName, inputAnimalAge, inputAnimalWeight, inputAnimalColor);
+                            cat.say();
                             animals.add(cat);
                             break;
 
                         case DUCK:
                             Duck duck = new Duck(inputAnimalName, inputAnimalAge, inputAnimalWeight, inputAnimalColor);
+                            duck.say();
                             animals.add(duck);
                             break;
 
                         case DOG:
                             Dog dog = new Dog(inputAnimalName, inputAnimalAge, inputAnimalWeight, inputAnimalColor);
+                            dog.say();
                             animals.add(dog);
                             break;
 
