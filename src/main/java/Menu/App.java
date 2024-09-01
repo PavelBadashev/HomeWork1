@@ -85,6 +85,12 @@ public class App {
                 default:
                     System.out.printf("Ошибка. Введите одну из комманд из " + Arrays.toString(Command.values()));
             }
+
+
+            String text = "text";
+            System.out.println(text);
+
+            System.out.println("text");
         }
     }
 }
