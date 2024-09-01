@@ -54,6 +54,7 @@ public class App {
                         case DUCK:
                             Duck duck = new Duck(inputAnimalName, inputAnimalAge, inputAnimalWeight, inputAnimalColor);
                             duck.say();
+                            duck.fly();
                             animals.add(duck);
                             break;
 
