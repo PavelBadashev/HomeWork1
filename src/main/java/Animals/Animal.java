@@ -5,7 +5,6 @@ public abstract class Animal {
     Integer age;
     Integer weight;
     String color;
-    private String old;
 
     Animal(String name, Integer age, Integer weight, String color) {
         this.name = name;
