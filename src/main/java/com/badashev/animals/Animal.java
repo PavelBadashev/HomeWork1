@@ -1,4 +1,4 @@
-package Animals;
+package com.badashev.animals;
 
 public abstract class Animal {
     String name;
@@ -45,13 +45,13 @@ public abstract class Animal {
         this.color = color;
     }
 
-    abstract void say();
+    public abstract void say();
 
-    abstract void go();
+    public abstract void go();
 
-    abstract void eat();
+    public abstract void eat();
 
-    abstract void drink();
+    public abstract void drink();
 
     private String ageStringConvert(){
         String old = "";

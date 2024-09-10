@@ -1,4 +1,4 @@
-package Animals;
+package com.badashev.animals;
 
 public class Duck extends Animal implements Flying{
 

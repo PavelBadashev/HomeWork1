@@ -7,7 +7,7 @@
 
 Описание/Пошаговая инструкция выполнения домашнего задания:
 #1) Создайте родительский класс
-Animals.Animal
+animals.Animal
 ##Свойства:
 name, age, weight, color
 ##Методы:
@@ -21,18 +21,18 @@ Eat(Вывод на экран: "Я ем")
 Привет! меня зовут Бобик, мне 5 лет, я вешу - 15 кг, мой цвет - черный
 Привет! меня зовут Бобик, мне 1 год, я вешу - 15 кг, мой цвет - черный
 Привет! меня зовут Бобик, мне 2 года, я вешу - 15 кг, мой цвет - черный
-#2) Создайте интерфейс Animals.Flying
+#2) Создайте интерфейс animals.Flying
 ##Методы:
 Fly
-#3) Создайте класс Cat унаследуйте его от Animals.Animal
+#3) Создайте класс Cat унаследуйте его от animals.Animal
 Переопределить метод Say(Вывод на экран: "Мяу")
-#4) Создайте класс Animals.Dog унаследуйте его от Animals.Animal
+#4) Создайте класс animals.Dog унаследуйте его от animals.Animal
 Переопределить метод Say(Вывод на экран: "Гав")
-#5) Создайте класс Duck унаследуйте его от Animals.Animal, реализуйте интерфейс Animals.Flying
+#5) Создайте класс Duck унаследуйте его от animals.Animal, реализуйте интерфейс animals.Flying
 Переопределить метод Say(Вывод на экран: "Кря")
 Реализовать метод Fly(Вывод на экран: "Я лечу")
 #6) В основной программе:
-Создайте ArrayList Animals.Animal
+Создайте ArrayList animals.Animal
 ##Создайте в консоли меню, при входе в приложение на экран выводится запрос команды add/list/exit
 Команды оформить в enum
 При вводе команды она должна быть регистронезависимой и обрезать пробелы в начале и конце
@@ -48,39 +48,3 @@ Fly
 
 
 Рекомендуем сдать до: 02.09.2024
-
-
-
-
-*** UPD Код для теста в main
-
-import Animals.Cat;
-import Animals.Dog;
-import Animals.Duck;
-
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog("Рекс", 5, 15, "Белый");
-        Duck duck = new Duck("Дональд", 1, 5, "Черный");
-        Cat cat = new Cat("Муся", 4, 8, "Рыжий");
-
-        dog.say();
-        dog.go();
-        dog.drink();
-        dog.eat();
-
-        duck.say();
-        duck.go();
-        duck.drink();
-        duck.eat();
-
-        cat.say();
-        cat.go();
-        cat.drink();
-        cat.eat();
-
-        System.out.println(dog.toString());
-        System.out.println(duck.toString());
-        System.out.println(cat.toString());
-    }
-}
