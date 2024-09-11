@@ -11,12 +11,9 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Animal> animals = new ArrayList<>();
-        boolean exit = false;
-        while (!exit) {
-            Commands command = new Commands(scanner, animals, exit);
+        while (true) {
+            Commands command = new Commands(scanner, animals);
             command.executeCommand();
-            System.out.print("\n");
-            exit = command.isExit();
         }
     }
 }

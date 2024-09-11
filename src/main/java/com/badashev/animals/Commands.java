@@ -10,16 +10,10 @@ public class Commands {
 
     private final Scanner scanner;
     private final List<Animal> animals;
-    private boolean exit;
 
-    public Commands(Scanner scanner, List<Animal> animals, boolean exit) {
+    public Commands(Scanner scanner, List<Animal> animals) {
         this.scanner = scanner;
         this.animals = animals;
-        this.exit = exit;
-    }
-
-    public boolean isExit() {
-        return exit;
     }
 
     public void executeCommand() {
@@ -44,9 +38,7 @@ public class Commands {
                     break;
 
                 case EXIT:
-                    this.exit = true;
-                    System.out.print("Выход из программы...");
-                    break;
+                    System.exit(200);
             }
         } catch (IllegalArgumentException e) {
             System.out.println("\nОшибка ввода комманды. Не обходимо ввести значение из списка.");
