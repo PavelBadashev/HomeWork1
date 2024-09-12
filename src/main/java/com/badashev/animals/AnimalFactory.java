@@ -24,7 +24,7 @@ public class AnimalFactory {
             // Ввод основных атрибутов животного
             System.out.print("Введите кличку животного: ");
             String inputAnimalName = scanner.nextLine();
-
+            
             System.out.print("Введите возраст животного: ");
             Integer inputAnimalAge = Integer.valueOf(scanner.nextLine());
 
