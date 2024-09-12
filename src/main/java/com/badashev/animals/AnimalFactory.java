@@ -1,37 +1,41 @@
 package com.badashev.animals;
 
+import com.badashev.animals.birds.Duck;
 import com.badashev.data.AnimalEnum;
 
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class AnimalFactory {
 
     private final Scanner scanner;
+    private final PrintStream printStream;
 
-    public AnimalFactory(Scanner scanner) {
+    public AnimalFactory(Scanner scanner, PrintStream printStream) {
         this.scanner = scanner;
+        this.printStream = printStream;
     }
 
     public Animal createAnimal() {
         // Ввод тип животного
-        System.out.println(Arrays.toString(AnimalEnum.values())); // Вывод списка доступны видов животных
-        System.out.println("Какое животное вы хотите добавить? (Выберите из приведенного выше списка)");
+        printStream.println(Arrays.toString(AnimalEnum.values())); // Вывод списка доступны видов животных
+        printStream.println("Какое животное вы хотите добавить? (Выберите из приведенного выше списка)");
         String inputLineAnimal = scanner.nextLine(); // Ввод значения пользователем
         try {
             AnimalEnum animalTypeCommand = AnimalEnum.fromString(inputLineAnimal);
 
             // Ввод основных атрибутов животного
-            System.out.print("Введите кличку животного: ");
+            printStream.print("Введите кличку животного: ");
             String inputAnimalName = scanner.nextLine();
-            
-            System.out.print("Введите возраст животного: ");
+
+            printStream.print("Введите возраст животного: ");
             Integer inputAnimalAge = Integer.valueOf(scanner.nextLine());
 
-            System.out.print("Введите вес животного: ");
+            printStream.print("Введите вес животного: ");
             Integer inputAnimalWeight = Integer.valueOf(scanner.nextLine());
 
-            System.out.print("Введите цвет животного: ");
+            printStream.print("Введите цвет животного: ");
             String inputAnimalColor = scanner.nextLine();
 
             switch (animalTypeCommand) {
@@ -52,11 +56,11 @@ public class AnimalFactory {
                     return dog;
 
                 case null, default:
-                    System.out.print("Ошибка. Выберите из ранее приведенного списка!");
+                    printStream.print("Ошибка. Выберите из ранее приведенного списка!");
                     return null;
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Ошибка ввода информации о животном.Не обходимо ввести значение из списка.");
+            printStream.println("Ошибка ввода информации о животном.Не обходимо ввести значение из списка.");
             return createAnimal();
         }
     }

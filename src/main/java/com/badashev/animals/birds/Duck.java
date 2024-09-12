@@ -1,6 +1,6 @@
-package com.badashev.animals;
+package com.badashev.animals.birds;
 
-public class Duck extends Animal implements Flying{
+public class Duck extends Bird{
 
     public Duck(String name, Integer age, Integer weight, String color) {
         super(name, age, weight, color);
@@ -28,6 +28,6 @@ public class Duck extends Animal implements Flying{
 
     @Override
     public void fly() {
-        System.out.println("Я лечу!");
+        System.out.println("Утка летит!");
     }
 }

@@ -1,12 +1,12 @@
 package com.badashev.animals;
 
 public abstract class Animal {
-    String name;
-    Integer age;
-    Integer weight;
-    String color;
+    private String name;
+    private Integer age;
+    private Integer weight;
+    private String color;
 
-    Animal(String name, Integer age, Integer weight, String color) {
+    protected Animal(String name, Integer age, Integer weight, String color) {
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -54,7 +54,7 @@ public abstract class Animal {
     public abstract void drink();
 
     private String ageStringConvert(){
-        String old = "";
+        String old;
         int ageLastNumber = age % 10;
 
         if (ageLastNumber == 1)
@@ -64,8 +64,7 @@ public abstract class Animal {
         else
             old = "лет";
         return age + " " + old;
-    };
-
+    }
     @Override
     public String toString() {
         return "Привет! Меня зовут "
@@ -73,7 +72,7 @@ public abstract class Animal {
                 + ageStringConvert()
                 + ". Я вешу - "
                 + weight
-                + "кг. Мой цвет - "
+                + " кг. Мой цвет - "
                 + color;
     }
 }

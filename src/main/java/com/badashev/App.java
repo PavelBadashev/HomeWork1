@@ -1,7 +1,7 @@
 package com.badashev;
 
 import com.badashev.animals.Animal;
-import com.badashev.animals.Commands;
+import com.badashev.commands.Commands;
 
 import java.util.ArrayList;
 import java.util.List;

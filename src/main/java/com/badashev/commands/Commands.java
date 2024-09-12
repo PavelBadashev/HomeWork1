@@ -1,6 +1,8 @@
-package com.badashev.animals;
+package com.badashev.commands;
 
-import com.badashev.data.Command;
+import com.badashev.animals.Animal;
+import com.badashev.animals.AnimalFactory;
+import com.badashev.data.CommandEnum;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,15 +20,15 @@ public class Commands {
 
     public void executeCommand() {
 
-        System.out.println(Arrays.toString(com.badashev.data.Command.values())); // Вывод списка доступны видов животных
+        System.out.println(Arrays.toString(CommandEnum.values())); // Вывод списка доступны видов животных
         System.out.print("Введите команду: ");
         String inputLine = scanner.nextLine();
         try {
-            Command command = Command.fromString(inputLine);
+            CommandEnum commandEnum = CommandEnum.fromString(inputLine);
 
-            switch (command) {
+            switch (commandEnum) {
                 case ADD:
-                    AnimalFactory animalFactory = new AnimalFactory(scanner);
+                    AnimalFactory animalFactory = new AnimalFactory(scanner, System.out);
                     Animal newAnimal = animalFactory.createAnimal();
                     animals.add(newAnimal);
                     break;
