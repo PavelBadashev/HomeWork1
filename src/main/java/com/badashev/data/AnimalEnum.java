@@ -1,4 +1,4 @@
-package com.badashev.Menu;
+package com.badashev.data;
 
 public enum AnimalEnum {
     DOG,

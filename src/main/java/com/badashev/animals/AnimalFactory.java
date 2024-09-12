@@ -1,6 +1,6 @@
 package com.badashev.animals;
 
-import com.badashev.Menu.AnimalEnum;
+import com.badashev.data.AnimalEnum;
 
 import java.util.Arrays;
 import java.util.Scanner;
