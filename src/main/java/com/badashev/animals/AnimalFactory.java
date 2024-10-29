@@ -2,6 +2,7 @@ package com.badashev.animals;
 
 import com.badashev.animals.birds.Duck;
 import com.badashev.data.AnimalEnum;
+import com.badashev.validator.ScannerValidator;
 
 import java.io.PrintStream;
 import java.util.Arrays;
@@ -24,19 +25,20 @@ public class AnimalFactory {
         String inputLineAnimal = scanner.nextLine(); // Ввод значения пользователем
         try {
             AnimalEnum animalTypeCommand = AnimalEnum.fromString(inputLineAnimal);
+            ScannerValidator validator = new ScannerValidator(scanner);
 
             // Ввод основных атрибутов животного
             printStream.print("Введите кличку животного: ");
-            String inputAnimalName = scanner.nextLine();
+            String inputAnimalName = validator.inputString();
 
             printStream.print("Введите возраст животного: ");
-            Integer inputAnimalAge = Integer.valueOf(scanner.nextLine());
+            Integer inputAnimalAge = validator.inputNumber();
 
             printStream.print("Введите вес животного: ");
-            Integer inputAnimalWeight = Integer.valueOf(scanner.nextLine());
+            Integer inputAnimalWeight = validator.inputNumber();
 
             printStream.print("Введите цвет животного: ");
-            String inputAnimalColor = scanner.nextLine();
+            String inputAnimalColor = validator.inputString();
 
             switch (animalTypeCommand) {
                 case CAT:
@@ -55,12 +57,12 @@ public class AnimalFactory {
                     dog.say();
                     return dog;
 
-                case null, default:
-                    printStream.print("Ошибка. Выберите из ранее приведенного списка!");
+                default:
+                    printStream.println("Ошибка. Выберите из ранее приведенного списка!");
                     return null;
             }
         } catch (IllegalArgumentException e) {
-            printStream.println("Ошибка ввода информации о животном.Не обходимо ввести значение из списка.");
+            printStream.println("Ошибка ввода информации о животном. Необходимо ввести значение из списка.");
             return createAnimal();
         }
     }

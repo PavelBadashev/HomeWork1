@@ -40,7 +40,7 @@ public class Commands {
                     break;
 
                 case EXIT:
-                    System.exit(200);
+                    System.exit(0);
             }
         } catch (IllegalArgumentException e) {
             System.out.println("\nОшибка ввода комманды. Не обходимо ввести значение из списка.");

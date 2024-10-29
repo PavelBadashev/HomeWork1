@@ -54,16 +54,13 @@ public abstract class Animal {
     public abstract void drink();
 
     private String ageStringConvert(){
-        String old;
-        int ageLastNumber = age % 10;
-
-        if (ageLastNumber == 1)
-            old = "год";
-        else if(ageLastNumber >= 2 && ageLastNumber <= 4)
-            old = "года";
-        else
-            old = "лет";
-        return age + " " + old;
+        if (age % 10 == 1 && age % 100 != 11) {
+            return age + " год";
+        }
+        if (age % 10 >= 2 && age % 10 <= 4 && (age % 100 < 10 || age % 100 >= 20)) {
+            return age + " года";
+        }
+        return age + " лет";
     }
     @Override
     public String toString() {
